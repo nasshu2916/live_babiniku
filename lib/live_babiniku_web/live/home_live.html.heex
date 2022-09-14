@@ -1,0 +1,46 @@
+<div class="p-4 max-w-screen-sm mx-auto">
+  <div class="flex items-start">
+    <div class="w-full">
+      <h2 class="text-2xl font-semibold">
+        Room 一覧
+      </h2>
+    </div>
+    <button class="btn btn-sm btn-primary" phx-click={show_modal("room-create-modal")}>
+      New
+    </button>
+  </div>
+
+  <div class="pt-3 flex flex-col gap-3">
+    <%= for %{private?: false} = room <- @rooms do %>
+      <.room room={room} socket={@socket} />
+    <% end %>
+  </div>
+
+  <.modal id="room-create-modal" class="max-w-sm">
+    <h3 class="text-xl font-semibold">
+      Room 作成
+      <.form let={f} for={:data} class="pt-3" phx-submit="create_room" phx-change="validate">
+        <label class="label">
+          <span class="label-text">ルーム名</span>
+        </label>
+        <%= text_input(f, :name,
+          value: @create_room_name,
+          placeholder: "作成するルーム名を入力してください",
+          class: "input input-bordered w-full"
+        ) %>
+        <label class="label">
+          <span class="label-text">プライベートルーム</span>
+          <%= checkbox(f, :private,
+            value: "true",
+            class: "checkbox",
+            "phx-update": "ignore"
+          ) %>
+        </label>
+
+        <button class="mt-5 btn btn-primary w-full" type="submit" disabled={@create_room_name == ""}>
+          Create
+        </button>
+      </.form>
+    </h3>
+  </.modal>
+</div>

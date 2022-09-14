@@ -1,0 +1,78 @@
+<div id="vrm" class="fixed" phx-hook="vrmViewer" phx-update="ignore" data-grid="true"></div>
+
+<div class="fixed w-full text-center text-8xl text-blue-600 select-none">
+  <%= raw(@state.top_message) %>
+</div>
+
+<div class="fixed top-0 left-0 transition-opacity opacity-0 hover:opacity-100 w-1/4 h-1/4">
+  <div class="m-3 tooltip tooltip-right" data-tip="url をクリップボートにコピー">
+    <button
+      class="btn btn-outline btn-sm btn-square rounded-lg opacity-60 hover:opacity-100"
+      phx-click={JS.dispatch("lb:clipcopy", to: "#room-url")}
+    >
+      <span id="room-url" class="hidden"><%= @room_url %></span>
+      <.icon icon="content_copy" class="text-base" />
+    </button>
+  </div>
+</div>
+
+<%= if @live_action == :event do %>
+  <div
+    id="tracking"
+    class="hidden flex-col absolute w-[300px] top-3 right-3 overflow-hidden rounded-xl bg-gray-900 opacity-80 camera-off"
+    phx-hook="tracking"
+  >
+    <video id="tracking-video" class="w-full -scale-x-100"></video>
+    <canvas class="block absolute bottom-0 left-0 w-full z-1 -scale-x-100"></canvas>
+    <div class="absolute right-2 top-2 bg-white rounded-full transition-opacity opacity-30 hover:opacity-80">
+      <button id="show-camera-button" phx-click={JS.add_class("camera-off", to: "#tracking")}>
+        <.icon icon="visibility_off" />
+      </button>
+      <button id="hide-camera-button" class="hidden" phx-click={JS.remove_class("camera-off", to: "#tracking")}>
+        <.icon icon="visibility" />
+      </button>
+    </div>
+  </div>
+
+  <div class="p-3 fixed bottom-0 w-full">
+    <div class="p-3 bg-gray-50 rounded-lg transition-opacity opacity-60 hover:opacity-100 grid grid-cols-3 items-end">
+      <form class="form-control col-span-2">
+        <textarea
+          type="text"
+          class="textarea resize-none"
+          placeholder="テキストを入力"
+          name="top_message"
+          phx-change="change_top_message"
+          rows="3"
+        >
+          <%= @state.raw_top_message %>
+        </textarea>
+      </form>
+
+      <div class="px-3">
+        <div>
+          <span class="badge badge-xs bg-green-700"></span>
+          <span>User:<%= @state.data.clients_map |> Map.keys() |> length() %></span>
+        </div>
+        <div>
+          <span class="badge badge-xs bg-green-700"></span>
+          <span>
+            Uniq:<%= @state.data.clients_map |> Enum.map(fn {_, user} -> user.id end) |> Enum.uniq() |> length() %>
+          </span>
+        </div>
+
+        <.tracking_control_button />
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= if @live_action != :event and @own_room? do %>
+  <div class="p-3 fixed bottom-0 w-full h-1/4 transition-opacity opacity-0 hover:opacity-100">
+    <div class="absolute p-3 right-0 bottom-0">
+      <%= live_patch to: "#{@room_url}/event", replace: false do %>
+        <button class="btn btn-success btn-sm ">オーナーページへ</button>
+      <% end %>
+    </div>
+  </div>
+<% end %>

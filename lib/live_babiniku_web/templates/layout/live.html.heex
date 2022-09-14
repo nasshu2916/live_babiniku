@@ -1,0 +1,28 @@
+<main class="bg-base-100 drawer drawer-mobile">
+  <div class="toast toast-top toast-center">
+    <%= if live_flash(@flash, :info) do %>
+      <div class="alert alert-info shadow-lg" phx-click="lv:clear-flash" phx-value-key="info">
+        <span class="whitespace-pre-wrap"><.icon icon="info" /><%= live_flash(@flash, :info) %></span>
+      </div>
+    <% end %>
+    <%= if live_flash(@flash, :success) do %>
+      <div class="alert alert-success shadow-lg" phx-click="lv:clear-flash" phx-value-key="success">
+        <span class="whitespace-pre-wrap"><.icon icon="check_circle" /><%= live_flash(@flash, :success) %></span>
+      </div>
+    <% end %>
+    <%= if live_flash(@flash, :warning) do %>
+      <div class="alert alert-warning shadow-lg" phx-click="lv:clear-flash" phx-value-key="warning">
+        <span class="whitespace-pre-wrap"><.icon icon="warning" /><%= live_flash(@flash, :warning) %></span>
+      </div>
+    <% end %>
+    <%= if live_flash(@flash, :error) do %>
+      <div class="alert alert-error shadow-lg" phx-click="lv:clear-flash" phx-value-key="error">
+        <span class="whitespace-pre-wrap"><.icon icon="error" /><%= live_flash(@flash, :error) %></span>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="drawer-content w-screen overflow-y-auto">
+    <%= @inner_content %>
+  </div>
+</main>
