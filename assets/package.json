@@ -19,7 +19,7 @@
     "daisyui": "2.31.0",
     "kalidokit": "1.1.5",
     "theme-change": "2.2.0",
-    "three": "0.144.0"
+    "three": "0.145.0"
   },
   "devDependencies": {
     "eslint": "8.24.0",
