@@ -18,7 +18,7 @@
     "alpinejs": "3.10.5",
     "daisyui": "2.46.1",
     "kalidokit": "1.1.5",
-    "theme-change": "2.2.0",
+    "theme-change": "2.3.0",
     "three": "0.148.0"
   },
   "devDependencies": {
