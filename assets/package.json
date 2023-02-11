@@ -9,7 +9,7 @@
     "lint:prettier": "prettier --check '{js,css}/**/*.{js,css}'"
   },
   "dependencies": {
-    "@mediapipe/camera_utils": "0.3.1675465971",
+    "@mediapipe/camera_utils": "0.3.1675466862",
     "@mediapipe/drawing_utils": "0.3.1675466124",
     "@mediapipe/holistic": "0.5.1675471629",
     "@pixiv/three-vrm": "0.6.11",
