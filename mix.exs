@@ -41,7 +41,7 @@ defmodule LiveBabiniku.MixProject do
       {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.6"},
       {:ecto, "~> 3.9.0"},
-      {:esbuild, "~> 0.6", runtime: Mix.env() == :dev},
+      {:esbuild, "~> 0.7", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.3"},
       {:telemetry, "~> 1.0.0"},
       {:telemetry_metrics, "~> 0.6"},
