@@ -51,7 +51,7 @@ defmodule LiveBabiniku.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:dialyxir, "~> 1.2", only: [:dev], runtime: false},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
-      {:tailwind, "~> 0.1.6", runtime: Mix.env() == :dev},
+      {:tailwind, "~> 0.2.0", runtime: Mix.env() == :dev},
       {:earmark, "~> 1.4.27"},
       {:prom_ex, "~> 1.7"}
     ]
