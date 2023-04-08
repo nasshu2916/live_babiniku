@@ -1865,10 +1865,10 @@ theme-change@2.5.0:
   resolved "https://registry.yarnpkg.com/theme-change/-/theme-change-2.5.0.tgz#d3b064af9c4cd01ab16ce0a4ecb251c827a50e68"
   integrity sha512-B/UdsgdHAGhSKHTAQnxg/etN0RaMDpehuJmZIjLMDVJ6DGIliRHGD6pODi1CXLQAN9GV0GSyB3G6yCuK05PkPQ==
 
-three@0.151.2:
-  version "0.151.2"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.151.2.tgz#b5b1906165499fa0586dd4adcc8c40dd781514c2"
-  integrity sha512-tGaLRP2H6++tj2JumHD25slhFAx0C619rl6G6Utjq7JTrDGJwDxpu+J2XpnYIUMfEmhNvIFDQJfp79JtKmNBWw==
+three@0.151.3:
+  version "0.151.3"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.151.3.tgz#0b3c7de4b070d5b66b15217f42465d67cbfa6004"
+  integrity sha512-+vbuqxFy8kzLeO5MgpBHUvP/EAiecaDwDuOPPDe6SbrZr96kccF0ktLngXc7xA7bzyd3N0t2f6mw3Z9y6JCojQ==
 
 to-regex-range@^5.0.1:
   version "5.0.1"
