@@ -389,10 +389,10 @@ cssesc@^3.0.0:
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
 
-daisyui@3.0.23:
-  version "3.0.23"
-  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-3.0.23.tgz#c137e2698ba7b2d578af48ca36563442a1294594"
-  integrity sha512-/VbiCeePwbQTLv1bnrw9SY2FH1IFoZGHOJIoB8tDYgsvaFus6rwQpc7hUjdshNpUc+GGo9sqYmNZwFw2kp5M8g==
+daisyui@3.0.25:
+  version "3.0.25"
+  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-3.0.25.tgz#c7a375f71ec2aa31adcfebf064d163414ba5ebae"
+  integrity sha512-VaX84OpujV8tEpl2IoUzDElbw/xwMZ+jXXGRY7V0SMyC+CYcXjAsLMi4M4VU4ulAPtlGHsZRgzrIrOPQvBtxRg==
   dependencies:
     colord "^2.9"
     css-selector-tokenizer "^0.8"
