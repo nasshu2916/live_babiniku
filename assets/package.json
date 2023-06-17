@@ -16,7 +16,7 @@
     "@tailwindcss/forms": "0.5.3",
     "@tailwindcss/typography": "0.5.9",
     "alpinejs": "3.12.2",
-    "daisyui": "3.1.0",
+    "daisyui": "3.1.1",
     "kalidokit": "1.1.5",
     "theme-change": "2.5.0",
     "three": "0.153.0"
