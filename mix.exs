@@ -36,7 +36,7 @@ defmodule LiveBabiniku.MixProject do
       {:phoenix, "~> 1.6.11"},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 0.17.5"},
+      {:phoenix_live_view, "~> 0.20.0"},
       {:phoenix_ecto, "~> 4.4.0"},
       {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.6"},
