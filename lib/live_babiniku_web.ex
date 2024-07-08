@@ -44,8 +44,7 @@ defmodule LiveBabinikuWeb do
 
   def live_view do
     quote do
-      use Phoenix.LiveView,
-        layout: {LiveBabinikuWeb.LayoutView, "live.html"}
+      use Phoenix.LiveView
 
       unquote(view_helpers())
     end
@@ -90,7 +89,7 @@ defmodule LiveBabinikuWeb do
       use Phoenix.HTML
 
       # Import LiveView and .heex helpers (live_render, live_patch, <.form>, etc)
-      import Phoenix.LiveView.Helpers
+      import Phoenix.Component
 
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View

@@ -1,5 +1,5 @@
 defmodule LivebookWeb.Hooks.UserHook do
-  import Phoenix.LiveView
+  import Phoenix.Component
 
   @current_user_key "current_user"
 

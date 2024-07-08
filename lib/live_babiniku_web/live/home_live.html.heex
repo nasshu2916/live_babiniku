@@ -19,7 +19,7 @@
   <.modal id="room-create-modal" class="max-w-sm">
     <h3 class="text-xl font-semibold">
       Room 作成
-      <.form let={f} for={:data} class="pt-3" phx-submit="create_room" phx-change="validate">
+      <.form :let={f} for={%{}} as={:data} class="pt-3" phx-submit="create_room" phx-change="validate">
         <label class="label">
           <span class="label-text">ルーム名</span>
         </label>
