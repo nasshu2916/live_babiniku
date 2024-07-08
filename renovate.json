@@ -5,5 +5,5 @@
   ],
   "labels": ["renovate"],
   "schedule": ["every weekend"],
-  "automerge": true
+  "automerge": false
 }
