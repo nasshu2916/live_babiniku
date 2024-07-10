@@ -5,7 +5,7 @@ defmodule LiveBabinikuWeb.Router do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {LiveBabinikuWeb.LayoutView, :root}
+    plug :put_root_layout, {LiveBabinikuWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -24,7 +24,7 @@ defmodule LiveBabinikuWeb.Router do
     get "/", HealthController, :index
   end
 
-  live_session :default,
+  live_session :browser,
     on_mount: [LivebookWeb.Hooks.UserHook] do
     scope "/", LiveBabinikuWeb do
       pipe_through [:browser, :auth]

@@ -19,6 +19,8 @@ defmodule LiveBabinikuWeb.ConnCase do
 
   using do
     quote do
+      use LiveBabinikuWeb, :verified_routes
+
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest

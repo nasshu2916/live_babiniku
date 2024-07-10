@@ -1,4 +1,4 @@
-defmodule LiveBabinikuWeb.LayoutViewTest do
+defmodule LiveBabinikuWeb.LayoutsTest do
   use LiveBabinikuWeb.ConnCase, async: true
 
   # When testing helpers, you may want to import Phoenix.HTML and

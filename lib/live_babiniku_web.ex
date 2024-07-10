@@ -17,21 +17,25 @@ defmodule LiveBabinikuWeb do
   and import those modules here.
   """
 
+  def static_paths, do: ~w(assets fonts images favicon.ico robots.txt)
+
   def controller do
     quote do
-      use Phoenix.Controller, namespace: LiveBabinikuWeb
+      use Phoenix.Controller,
+        formats: [:json],
+        layout: [html: LiveBabinikuWeb.Layouts]
 
       import Plug.Conn
       import LiveBabinikuWeb.Gettext
       alias LiveBabinikuWeb.Router.Helpers, as: Routes
+
+      unquote(verified_routes())
     end
   end
 
   def view do
     quote do
-      use Phoenix.View,
-        root: "lib/live_babiniku_web/templates",
-        namespace: LiveBabinikuWeb
+      use Phoenix.Component
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -44,7 +48,8 @@ defmodule LiveBabinikuWeb do
 
   def live_view do
     quote do
-      use Phoenix.LiveView
+      use Phoenix.LiveView,
+        layout: {LiveBabinikuWeb.Layouts, :live}
 
       unquote(view_helpers())
     end
@@ -98,6 +103,17 @@ defmodule LiveBabinikuWeb do
 
       # Custom helpers
       import LiveBabinikuWeb.LiveHelpers
+
+      unquote(verified_routes())
+    end
+  end
+
+  def verified_routes do
+    quote do
+      use Phoenix.VerifiedRoutes,
+        endpoint: LiveBabinikuWeb.Endpoint,
+        router: LiveBabinikuWeb.Router,
+        statics: LiveBabinikuWeb.static_paths()
     end
   end
 
