@@ -34,12 +34,12 @@ defmodule LiveBabiniku.MixProject do
   defp deps do
     [
       {:phoenix, "~> 1.7.14"},
-      {:phoenix_html, "~> 3.0"},
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 0.19.5"},
+      {:phoenix_html, "~> 3.3"},
+      {:phoenix_live_reload, "~> 1.5", only: :dev},
+      {:phoenix_live_view, "~> 0.20.17"},
       {:phoenix_ecto, "~> 4.4.0"},
-      {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.8.4"},
+      {:floki, ">= 0.30.0", only: :test},
       {:ecto, "~> 3.11.0"},
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.3"},

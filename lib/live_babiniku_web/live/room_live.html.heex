@@ -70,9 +70,9 @@
 <%= if @live_action != :event and @own_room? do %>
   <div class="p-3 fixed bottom-0 w-full h-1/4 transition-opacity opacity-0 hover:opacity-100">
     <div class="absolute p-3 right-0 bottom-0">
-      <%= live_patch to: "#{@room_url}/event", replace: false do %>
+      <.link patch={"#{@room_url}/event"} replace={false}>
         <button class="btn btn-success btn-sm ">オーナーページへ</button>
-      <% end %>
+      </.link>
     </div>
   </div>
 <% end %>

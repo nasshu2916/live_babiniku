@@ -40,10 +40,10 @@ defmodule LiveBabinikuWeb.LiveHelpers do
           phx-key="escape"
         >
           <%= if @patch do %>
-            <%= live_patch("", to: @patch, class: "hidden", id: "#{@id}-return") %>
+            <.link patch={@patch} class="hidden" id={"#{@id}-return"}></.link>
           <% end %>
           <%= if @navigate do %>
-            <%= live_redirect("", to: @navigate, class: "hidden", id: "#{@id}-return") %>
+            <.link href={@navigate} class="hidden" id={"#{@id}-return"}></.link>
           <% end %>
           <button
             type="button"

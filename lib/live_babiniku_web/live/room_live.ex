@@ -39,7 +39,7 @@ defmodule LiveBabinikuWeb.RoomLive do
 
       :error ->
         {:ok,
-         push_redirect(
+         push_navigate(
            socket,
            to: Routes.home_path(socket, :page)
          )}

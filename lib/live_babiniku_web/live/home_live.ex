@@ -25,7 +25,7 @@ defmodule LiveBabinikuWeb.HomeLive do
 
     case Rooms.create(name, owner_user_id: user.id, private?: private == "true") do
       {:ok, room} ->
-        {:noreply, push_redirect(socket, to: Routes.room_path(socket, :page, room.id))}
+        {:noreply, push_navigate(socket, to: Routes.room_path(socket, :page, room.id))}
 
       {:error, _} ->
         {:noreply, socket}
@@ -66,9 +66,9 @@ defmodule LiveBabinikuWeb.HomeLive do
         </div>
       </div>
       <div class="col-end-auto flex justify-end">
-        <%= live_redirect to: Routes.room_path(@socket, :page, @room.id), class: "btn btn-sm" do %>
+        <.link href={Routes.room_path(@socket, :page, @room.id)} class="btn btn-sm">
           <.icon icon="login" />
-        <% end %>
+        </.link>
       </div>
     </div>
     """
