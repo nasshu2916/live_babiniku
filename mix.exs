@@ -43,7 +43,7 @@ defmodule LiveBabiniku.MixProject do
       {:ecto, "~> 3.11.0"},
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.3"},
-      {:telemetry, "~> 1.0.0"},
+      {:telemetry, "~> 1.2.0"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.24"},
